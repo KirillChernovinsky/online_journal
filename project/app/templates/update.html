@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class='forms_area' action="" method="post">
+        <div class="create_student">
+{{ men.name }}
+            {% csrf_token %}
+            <input name="name" placeholder="Name" value="{{ men.name }}">
+            <input name="surname" placeholder="Surname" value="">
+            <select name="estimation">
+                {% for mark in marks %}
+                    <option value="{{ mark.id }}">{{mark.estimation}}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+
+        <button>Отправить</button>
+    </form></body>
+</html>

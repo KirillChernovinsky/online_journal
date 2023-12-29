@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form class='forms_area' action="" method="post">
+        <div class="create_student">
+
+            {% csrf_token %}
+            <p>{{ form }}</p>
+            <select name="estimation">
+                {% for mark in marks %}
+                    <option value="{{ mark.id }}">{{mark.estimation}}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+
+        <button>Отправить</button>
+    </form>
+
+</body>
+</html>

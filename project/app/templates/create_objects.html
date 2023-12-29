@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form class='forms_area' action="" method="post">
+        <div class="create_object">
+
+            {% csrf_token %}
+            {{ form }}
+        </div>
+
+        <button>Отправить</button>
+    </form>
+
+</body>
+</html>

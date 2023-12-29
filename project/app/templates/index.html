@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a class="items_in_catalog" href="{% url 'create_student' %}">Добавить студента</a>
+<br>
+{% csrf_token %}
+{% for i in student %}
+    {{ i.name }}
+    {{ i.surname }}
+    {{ i.object }}
+    {{ i.estimation.estimation }}
+    {{ i.average_score }}
+    <a class="items_in_catalog" href="{% url 'update' i.id %}">Редактировать студента</a>
+    <a class="items_in_catalog" href="{% url 'delete' i.id %}">Удалить студента</a>
+    <br>
+{% endfor %}
+
+
+
+<form>
+
+</form>
+</body>
+</html>
